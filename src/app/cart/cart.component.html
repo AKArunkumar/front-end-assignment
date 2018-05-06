@@ -1,12 +1,41 @@
 <div class="shop">
-    <div class="sp-grid">
-      <div class="sp-grid-item" *ngFor="let item of cartItems">
-       <div class="image">
-           <img src=" {{item.imageUrl}} " alt="">      
-       </div>
-       <div class="name">
-       </div>
-       
-     </div>
+  <div class="cart-nav">
+    MY CART({{cartItems.length}})
+  </div>
+  <div class="sp-items">
+    <div class="sp-item" *ngFor="let item of cartItems; let i = index">
+      <div class="side-1">
+        <div>
+          <img class="image" src=" {{item.imageUrl}} " height="200px" width="150px" alt="">
+        </div>
+        <div class="item-count">
+          <button class="increment" (click)="increment(i, quantity.value)" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" >
+            <span class="plus">+</span>
+          </button>
+          <input  type="number" #quantity class="count" align="middle" min="0" value="0" >
+          <button class="decrement" (click)="decrement(i, quantity.value)" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+            <span class="minus" >-</span>
+          </button>
+
+        </div>
+      </div>
+      <div class="side-2">
+        <div class="name">
+          <p> {{item.name}} </p>
+        </div>
+        <div class="price">
+          <p> {{item.price | currency: 'CAD': 'symbol-narrow':'3.2' }} </p>
+        </div>
+        <div class="remove">
+          <button (click)="removeItem(i)" >
+            REMOVE
+          </button>
+        </div>
+      </div>
     </div>
-   </div>
+    <div class="gobtns">
+      <button class="continue">CONTINUE SHOPPING</button>
+      <button class="place-odr">PLACE ORDER</button>
+    </div>
+  </div>
+</div>
