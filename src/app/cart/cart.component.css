@@ -1,0 +1,137 @@
+.cart-nav {
+  margin-top: 20px;
+  height: 40px;
+  border-bottom: 2px solid silver;
+}
+
+.sp-items {
+  display: flex;
+  flex-direction: column
+}
+
+/* for big screens */
+
+@media only screen and (min-width: 901px) {
+  .cart-nav {
+    margin-top: 20px;
+    height: 40px;
+    border-bottom: none;
+  }
+  .sp-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sp-item {
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-right: 10px;
+  }
+}
+
+.sp-item {
+  flex: 1;
+  display: flex;
+  margin: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-1 {
+  margin: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-count {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.increment,
+.decrement {
+  flex: 1;
+  height: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: solid 1.5px grey;
+  cursor: pointer;
+  outline: none;
+}
+
+.count {
+  flex: 1;
+  height: 40px;
+  width: 60px;
+}
+
+.count,
+input {
+  margin: 0 10px 0 10px;
+  border: solid 1.5px grey;
+  padding: 5px;
+  outline: none;
+  text-align: center; 
+}
+.plus,
+.minus {
+  font-size: 30px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.side-2 {
+  margin: 5px;    
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.name {
+  flex: 1;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.price {
+  flex: 1;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.remove button {
+  width: 80%;
+  height: 40px;
+  background-color: transparent;
+  border: solid 1px gray;
+  outline: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.gobtns {
+    display: flex;
+}
+.continue, .place-odr {
+    margin-top: 10px;
+    flex: 1;
+    height: 50px;
+    background-color: transparent;
+    outline: none;
+    border: solid 1px gray;
+    margin-right: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+    
+}
+.place-odr {
+    background-color: orangered;
+    border: none;
+}
