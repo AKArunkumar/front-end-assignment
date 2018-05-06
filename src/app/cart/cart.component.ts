@@ -17,4 +17,17 @@ export class CartComponent implements OnInit {
     this.cartItems = this.itemservice.getItems();
   }
 
+  increment(id: number, quantity: string) {
+    // console.log(id, quantity);
+    localStorage.setItem(JSON.stringify(id), quantity);
+    
+  }
+  decrement(id: number, quantity: string) {
+    // console.log(id, quantity);
+    localStorage.setItem(JSON.stringify(id), quantity);
+  }
+  removeItem(id: number) {
+    this.cartItems.splice(id, 1);
+    localStorage.removeItem(JSON.stringify(id));
+  }
 }
